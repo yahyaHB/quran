@@ -46,7 +46,7 @@ class Menu extends Component {
               <ul>
                 {
                   souarNames.map((surahname, id) => {
-                    return (<li key={id}>
+                    return (<li onClick={()=>this.props.goToSurah(surahname.number)} key={id}>
                       <div className='list-box'>
                         <div className='list-number-box'>{surahname.number}</div>
                         <a href='#'>

@@ -6,11 +6,17 @@ import './style.css';
 class NavBar extends Component {
   render() {
     console.log(this.props.surah );
-    const { origin, name, ayatNumber } = this.props.surah
+    const { name, numberOfAyahs, revelationType } = this.props.surah
+
+    const origin = {
+      'Medinan' : 'مدنية' ,
+      'Makki' : 'مكية'
+    }[revelationType] || 'غير متوفر'
+
     return (
       <div>
         <header>
-          <Menu />
+          <Menu goToSurah={this.props.goToSurah}/>
 
           <div className='name-sourh'>
             <div className='cont'>
@@ -20,7 +26,7 @@ class NavBar extends Component {
               {name}
             </div>
             <div className='num-ayat'>
-              {ayatNumber}
+              {numberOfAyahs}
             </div>
           </div>
         </header>

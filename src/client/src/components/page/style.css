@@ -1,4 +1,4 @@
-.page-container{
+.page-container{20
   position: absolute;
   left: 0px;
   right: 0px;
@@ -11,7 +11,7 @@
 .ayat-holder{
   margin: 50px auto 0px auto;
   height: 92vh;
-  width: 70%;
+  width: 475px;
   border-left: 2px solid gray;
   border-right: 2px solid gray;
   display: flex;
@@ -27,6 +27,9 @@
     line-height: 50px;
 }
 .ayat-list-holder {
+    overflow: auto;
     flex: 1;
+    display: flex;
+    justify-content: center;
     /* background: url(../../../public/assets/img/quran-page-bg.png); */
 }

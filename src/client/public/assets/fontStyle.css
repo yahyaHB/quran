@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "AmiriQuran-Regular";
+    src: url("./fonts/fontq4.eot");
+    src: url("./fonts/fontq4.eot?#iefix") format("embedded-opentype"),
+        url("./fonts/fontq4.otf") format("opentype"),
+        url("./fonts/fontq4.svg") format("svg"),
+        url("./fonts/fontq4.ttf") format("truetype"),
+        url("./fonts/fontq4.woff") format("woff"),
+        url("./fonts/fontq4.woff2") format("woff2");
+    }
+@font-face {
+    font-family: "HelveticaNeueW23forSKYRegular";
+    src: url("./fonts/fontr1.eot");
+    src: url("./fonts/fontr1.eot?#iefix") format("embedded-opentype"),
+        url("./fonts/fontr1.otf") format("opentype"),
+        url("./fonts/fontr1.svg") format("svg"),
+        url("./fonts/fontr1.ttf") format("truetype"),
+        url("./fonts/fontr1.woff") format("woff"),
+        url("./fonts/fontr1.woff2") format("woff2");
+    }
+@font-face {
+    font-family: "KFGQPCUthmanicScriptHAFS";
+    src: url("./fonts/fontq1.eot");
+    src: url("./fonts/fontq1.eot?#iefix") format("embedded-opentype"),
+        url("./fonts/fontq1.otf") format("opentype"),
+        url("./fonts/fontq1.svg") format("svg"),
+        url("./fonts/fontq1.ttf") format("truetype"),
+        url("./fonts/fontq1.woff") format("woff"),
+        url("./fonts/fontq1.woff2") format("woff2");
+    }

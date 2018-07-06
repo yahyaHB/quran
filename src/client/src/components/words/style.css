@@ -1,0 +1,9 @@
+.words-holder-container {
+    padding: 10px 17px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.active-ayah {
+    background: #00000026;
+}

@@ -9,6 +9,8 @@ export default class Page extends Component {
 
 
   render(){
+    console.log('Page' ,this.props);
+    const { ayahs , currentPage , firstPage } = this.props.page
     return (
       <div className='page-container'>
         <div className='ayat-holder'>
@@ -16,7 +18,7 @@ export default class Page extends Component {
             <span className='basmla'>بسم الله الرحمن الرحيم</span>
           </div>
           <div className='ayat-list-holder'>
-             <Words ayat={this.props.ayat}/>
+             <Words ayahs={ayahs}/>
           </div>
         </div>
       </div>

@@ -1,0 +1,13 @@
+.ayah-word {
+    font-family: 'KFGQPCUthmanicScriptHAFS', serif;
+    padding: 3px 2px;
+    flex: 1;
+    font-size: x-large;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.active{
+      background: #00000026;
+}
