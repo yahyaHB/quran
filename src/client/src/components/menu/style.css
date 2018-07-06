@@ -1,0 +1,220 @@
+a {
+  text-decoration: none !important;
+}
+
+.clearfix {
+  clear: both;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #03a678;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+ 
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #03a678;
+}
+
+::-moz-scrollbar {
+  width: 5px;
+}
+
+::-moz-scrollbar-track {
+  background-color: transparent;
+}
+
+::-moz-scrollbar-thumb {
+  background-color: #03a678;
+}
+
+.menu {
+  width: 25%;
+  float: right;
+  height: 100%;
+  position: absolute;
+  visibility: hidden;
+  top: 50px;
+  font-family: "HelveticaNeueW23forSKYRegular";
+}
+
+.menu .menu-1 {
+  background-color: #fff;
+  color: #505050;
+  width: 100%;
+  z-index: 999;
+  height: 100%;
+  position: absolute;
+  border-left: 1px solid #B4B4B4;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 1px 3px 6px 4px rgba(0, 0, 0, .1);
+  transform: translateX(400px);
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.menu .menu-1.menu-valid {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(0) !important;
+  height: 92vh;
+}
+
+.menu .list-menu {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+.menu .list-menu .list-box {
+  border-bottom: 1px solid #f1f1f1;
+  height: 30px;
+  width: 100%;
+  display: inline-block;
+}
+
+.menu .list-menu .list-number-box {
+  background-color: #f1f1f1;
+  float: right;
+  width: 10%;
+  height: 28px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 33px;
+  text-align: center;
+  border-left: 1px solid #03a678;
+  text-shadow: 2px 1px #f4f4f4;
+}
+
+.menu .span-right-list {
+  height: 28px;
+  color: #909090;
+  margin-right: 3%;
+  font-size: 13px;
+  line-height: 33px;
+  text-decoration: none;
+  text-shadow: 2px 1px #f4f4f4;
+}
+
+.menu .span-right-list:hover {
+  color: #009a6f;
+}
+
+.menu .end-menu {
+  font-size: 18px !important;
+  font-weight: normal;
+  font-family: "HelveticaNeueW23forSKYRegular" !important;
+  border-left: 2px solid #05e1a2;
+  border-right: 2px solid #05e1a2;
+  padding: 5px;
+  width: 100%;
+  height: 38px;
+  background-color: #03a678;
+  text-align: center;
+  color: #fff;
+  line-height: 30px;
+  text-shadow: 2px 1px rgba(0, 0, 0, .2);
+  cursor: pointer;
+}
+
+.brand {
+    font-size: 18px;
+    padding: 5px;
+    float: right;
+    width: 20%;
+    height: 38px;
+    position: relative;
+    right: 20px;
+    text-align: center;
+    color: #fff;
+    border-left: 1px solid #f1f1f1;
+    line-height: 30px;
+    text-shadow: 2px 1px rgba(0, 0, 0, .2);
+    visibility: visible;
+    top: 5px;
+    cursor: pointer;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out }
+
+/* Icon */
+.icons {
+    width: 28px;
+    height: 25px;
+    position: relative;
+    top: -27px }
+
+.icons > span {
+    width: 100%;
+    height: 1px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out }
+
+.icons span:nth-child(1) { top: 0 }
+.icons span:nth-child(2) { top: 10px }
+.icons span:nth-child(3) { top: 20px }
+.icons.open span:nth-child(1) {
+    top: 10px;
+    transform: rotate(45deg) }
+
+.icons.open span:nth-child(2) {
+    width: 0;
+    height: 0 }
+
+.icons.open span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-45deg) }
+
+
+
+@media(max-width: 575.98px) {
+  .menu {
+    width: 95%;
+    height: 100%;
+  }
+}
+
+@media(min-width: 576px) and (max-width: 767.98px) {
+  .menu {
+    width: 70%;
+    height: 100%;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991.98px) {
+  .menu {
+    width: 40%;
+  }
+}
+
+@media(min-width: 992px) and (max-width: 1199.98px) {
+  .menu {
+    width: 33%;
+  }
+}
+
+@media(min-width: 1200px) {
+    .menu {
+      width: 23%;
+    }
+  }
