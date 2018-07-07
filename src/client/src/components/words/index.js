@@ -1,5 +1,7 @@
 import React , { Component } from 'react'
 import Word from '../word'
+
+
 import './style.css'
 
 const ayahToWords = ayah => ayah.originalText.split(' ').map(word=>({text : word.trim() , ayahId :ayah.numberInSurah }))
@@ -27,7 +29,8 @@ export default class Words extends Component {
           onClick={this.showAyahTafsir}
           id={id}
           word={word}
-          ayahId={this.state.activeAyah.numberInSurah}/>)}
+          ayahId={this.state.activeAyah.numberInSurah}/>
+        )}
       </div>
     )
   }
