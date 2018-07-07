@@ -1,7 +1,8 @@
-import React , { Component } from 'react'
+import React , { Component } from 'react';
+import Loader from 'react-loaders';
 
-import NavBar from '../../components/navBar'
-import Page from '../../components/page'
+import NavBar from '../../components/navBar';
+import Page from '../../components/page';
 
 import './style.css'
 export default class Home extends Component {
@@ -61,7 +62,7 @@ export default class Home extends Component {
         <Page page={this.state.page} />
       </div>
       :
-      <div >is isFetching</div>
+      <Loader type="square-spin" active />
       }
       </div>
     )
