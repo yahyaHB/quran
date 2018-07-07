@@ -15,7 +15,10 @@ export default class Page extends Component {
       <div className='page-container'>
         <div className='ayat-holder'>
           <div className='ayat-header'>
-            <span className='basmla'>بسم الله الرحمن الرحيم</span>
+            <span className='basmla'>
+            بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ
+            </span>
+
           </div>
           <div className='ayat-list-holder'>
              <Words ayahs={ayahs}/>

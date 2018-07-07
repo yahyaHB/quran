@@ -33,3 +33,7 @@
     justify-content: center;
     /* background: url(../../../public/assets/img/quran-page-bg.png); */
 }
+.basmla{
+  font-family: 'KFGQPCUthmanicScriptHAFS', serif;
+  font-size: x-large;
+}
