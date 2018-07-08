@@ -1,32 +1,42 @@
 import React , { Component } from 'react'
 import Word from '../word'
-
+import OptionPopup from '../optionPopup'
+import ReactDOM from "react-dom";
 
 import './style.css'
 
 const ayahToWords = ayah => ayah.originalText.split(' ').map(word=>({text : word.trim() , ayahId :ayah.numberInSurah }))
 const ayahsWords = ayahs => ayahs.reduce((ayahsWords , ayah) => [...ayahsWords ,...ayahToWords(ayah)], [])
-
+const fixPosition = position => ({ top : position.top - 70 , left : 220  })
 
 export default class Words extends Component {
   state = {
-    activeAyah : {}
+    activeAyah : {},
+    showPopUp : false
   }
+  componentDidMount = () => ReactDOM.findDOMNode(this).onscroll = console.log //() => this.setState({ showPopUp : false })
 
-  showAyahTafsir = (ayahId ) => {
-    this.setState({
-      activeAyah : this.props.ayahs.filter(ayah => ayah.numberInSurah === ayahId )[0] || {}
-    })
-    console.log(this.state);
+  popAyahOptions = ({ayahId , position } ) => {
+    if(this.state.activeAyah.numberInSurah !== ayahId){
+      this.setState({
+        activeAyah : this.props.ayahs.filter(ayah => ayah.numberInSurah === ayahId )[0] || {} ,
+        showPopUp : true ,
+        popPosition : fixPosition(position)
+      })
+    }
+    else
+    this.setState({ showPopUp : !this.state.showPopUp })
   }
 
   render(){
     const words =ayahsWords(this.props.ayahs) || []
     return (
       <div className='words-holder-container'>
+        {this.state.showPopUp && <OptionPopup  position={this.state.popPosition} ayah= {''}/>}
         {words.map((word,id) =>
           <Word
-          onClick={this.showAyahTafsir}
+          key={id}
+          onClick={this.popAyahOptions}
           id={id}
           word={word}
           ayahId={this.state.activeAyah.numberInSurah}/>
