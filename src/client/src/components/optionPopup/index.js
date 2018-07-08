@@ -5,9 +5,12 @@ import './style.css'
 export default class OptionPopup extends Component {
 
   render(){
-
+    const style = {
+      top :  this.props.position.top,
+      left : this.props.position.left  ,
+    }
     return (
-    <div className='ayah-options-popup-container'>
+    <div style={style} className='ayah-options-popup-container'>
         <div className='arrow-down'></div>
         <div className='popup-menu'>
           <Copy />
