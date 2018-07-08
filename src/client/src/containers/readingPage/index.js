@@ -1,10 +1,11 @@
 import React , { Component } from 'react';
-import Loader from 'react-loaders';
+import { ScaleLoader } from 'react-spinners';
+
 
 import NavBar from '../../components/navBar';
 import Page from '../../components/page';
 
-import './style.css'
+import './style.css';
 export default class Home extends Component {
   state = {
     isFetching : true ,
@@ -15,7 +16,6 @@ export default class Home extends Component {
     },
     currentPage : 5 ,
     page : {}
-
   }
 
   goToSurah = (surahStartPage) => {
@@ -25,6 +25,7 @@ export default class Home extends Component {
     })
     this.goToPage(++this.state.currentPage)
   }
+
   componentDidMount = () => this.goToPage(7)
   goToPage = (page) => {
 
@@ -62,7 +63,9 @@ export default class Home extends Component {
         <Page page={this.state.page} />
       </div>
       :
-      <Loader type="square-spin" active />
+      <center className='center'>
+        <ScaleLoader color={'#66D49D'} loading={isFetching} width={4} />
+      </center>
       }
       </div>
     )

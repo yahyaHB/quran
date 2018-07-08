@@ -1,8 +1,7 @@
-import React , { Component } from 'react'
-import Word from '../word'
+import React , { Component } from 'react';
+import Word from '../word';
 
-
-import './style.css'
+import './style.css';
 
 const ayahToWords = ayah => ayah.originalText.split(' ').map(word=>({text : word.trim() , ayahId :ayah.numberInSurah }))
 const ayahsWords = ayahs => ayahs.reduce((ayahsWords , ayah) => [...ayahsWords ,...ayahToWords(ayah)], [])

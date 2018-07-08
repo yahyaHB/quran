@@ -1,0 +1,21 @@
+.top-space {
+  padding-top: 10px;
+}
+
+.popup-menu-item {
+  padding: 3px 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color : #000000b0;
+  z-index: 10;
+}
+
+.popup-menu-item:hover {
+  background: #03a678c4;
+  color:white;
+}
+
+.popup-menu-item-content {
+  margin-right: 5px;
+}

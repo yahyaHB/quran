@@ -1,5 +1,5 @@
 import React , { Component } from 'react'
-
+import Copy from '../copy';
 import './style.css'
 
 export default class OptionPopup extends Component {
@@ -10,12 +10,7 @@ export default class OptionPopup extends Component {
     <div className='ayah-options-popup-container'>
         <div className='arrow-down'></div>
         <div className='popup-menu'>
-          <span className='popup-menu-item'>
-            <i className="fas fa-copy"></i>
-            <span className='popup-menu-item-content'>
-            نسخ
-            </span>
-          </span>
+          <Copy />
           <span className='popup-menu-item'>
             <i className="fas fa-share-alt"></i>
             <span className='popup-menu-item-content'>
