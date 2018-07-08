@@ -1,17 +1,17 @@
 import React , { Component } from 'react'
 import OptionPopup from '../optionPopup'
 import './style.css'
+import ReactDOM from "react-dom";
 
 export default class Word extends Component {
-  state ={
-      visable : false
+
+  showOptions = () => {
+    const position = ReactDOM.findDOMNode(this).getBoundingClientRect() ,
+          ayahId    = this.props.word.ayahId
+          
+    this.props.onClick({ayahId , position })
   }
 
-  togglePopUp = () => this.setState({ visable : !this.state.visable })
-
-  position = e => {
-    console.log({ x : e.target.pageX , y : e.target.pageY ,target :e.target});
-  }
   render(){
     const { id , ayahId , word } = this.props
     const style = {
@@ -23,10 +23,10 @@ export default class Word extends Component {
         style={style}
         key={id}
         className={'ayah-word '+'ayah-'+word.ayahId}
-        onClick={(e)=>{this.togglePopUp(e) ; this.props.onClick(word.ayahId)}}
+        onClick={this.showOptions}
         >
         {word.text}
-        { this.state.visable && <OptionPopup  ayah= {''}/>}
+        {/* { this.state.visable && <OptionPopup  ayah= {''}/>} */}
       </span>
     )
   }

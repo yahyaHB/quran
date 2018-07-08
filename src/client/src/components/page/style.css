@@ -28,9 +28,14 @@
 }
 .ayat-list-holder {
     overflow: auto;
+    position: relative;
     flex: 1;
     display: flex;
     justify-content: center;
+    background: url(/assets/img/bg4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     /* background: url(../../../public/assets/img/quran-page-bg.png); */
 }
 .basmla{
