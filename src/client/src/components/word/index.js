@@ -1,5 +1,4 @@
 import React , { Component } from 'react'
-import OptionPopup from '../optionPopup';
 import './style.css'
 import ReactDOM from "react-dom";
 
@@ -26,7 +25,6 @@ export default class Word extends Component {
         onClick={this.showOptions}
         >
         {word.text}
-        {/* { this.state.visable && <OptionPopup  ayah= {''}/>} */}
       </span>
     )
   }

@@ -63,7 +63,7 @@ export default class Home extends Component {
         <Page page={this.state.page} />
       </div>
       :
-      <center className='center'>
+      <center className='loader-component center'>
         <ScaleLoader color={'#66D49D'} loading={isFetching} width={4} />
       </center>
       }
