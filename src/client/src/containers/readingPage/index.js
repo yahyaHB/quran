@@ -1,12 +1,14 @@
-import React , { Component } from 'react'
+import React , { Component } from 'react';
+import { ScaleLoader } from 'react-spinners';
 
-import NavBar from '../../components/navBar'
-import Page from '../../components/page'
 
-import './style.css'
+import NavBar from '../../components/navBar';
+import Page from '../../components/page';
+
+import './style.css';
 export default class Home extends Component {
   state = {
-    isFetching : true ,
+    isFetching: true ,
     surah : {
       name : 'test',
       numberOfAyahs :0 ,
@@ -14,7 +16,6 @@ export default class Home extends Component {
     },
     currentPage : 5 ,
     page : {}
-
   }
 
   goToSurah = (surahStartPage) => {
@@ -24,6 +25,7 @@ export default class Home extends Component {
     })
     this.goToPage(++this.state.currentPage)
   }
+
   componentDidMount = () => this.goToPage(7)
   goToPage = (page) => {
 
@@ -61,7 +63,9 @@ export default class Home extends Component {
         <Page page={this.state.page} />
       </div>
       :
-      <div >is isFetching</div>
+      <center className='loader-component center'>
+        <ScaleLoader color={'#66D49D'} loading={isFetching} width={4} />
+      </center>
       }
       </div>
     )

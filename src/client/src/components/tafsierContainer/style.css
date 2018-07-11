@@ -1,0 +1,36 @@
+.tafsier {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+.tafsier i {
+  position: absolute;
+  top: 14%;
+  left: 8%;
+  cursor: pointer;
+  z-index: 1;
+  margin: 0 !important;
+}
+
+.tafsier .tfs {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 85%;
+  height: 85%;
+  color: #151515;
+  background-color: #f9f9f9;
+  border-radius: 2px;
+  border: 1px solid #03a678;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 35px !important;
+  font-size: 19px;
+  line-height: 35px !important;
+}

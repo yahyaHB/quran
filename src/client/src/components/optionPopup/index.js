@@ -1,10 +1,11 @@
 import React , { Component } from 'react'
-
+import Copy from '../copy';
 import './style.css'
 
 export default class OptionPopup extends Component {
 
   render(){
+    console.log('this.props', this.props);
     const style = {
       top :  this.props.position.top,
       left : this.props.position.left  ,
@@ -13,12 +14,7 @@ export default class OptionPopup extends Component {
     <div style={style} className='ayah-options-popup-container'>
         <div className='arrow-down'></div>
         <div className='popup-menu'>
-          <span className='popup-menu-item'>
-            <i className="fas fa-copy"></i>
-            <span className='popup-menu-item-content'>
-            نسخ
-            </span>
-          </span>
+          <Copy />
           <span className='popup-menu-item'>
             <i className="fas fa-share-alt"></i>
             <span className='popup-menu-item-content'>

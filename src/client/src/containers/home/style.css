@@ -41,7 +41,7 @@
   width: 100%;
   background: yellow;
   margin: 20px;
-  background: linear-gradient( #000000cf, #fefefe8c, #000000cf), url(/assets/img/read.jpeg);
+  background: linear-gradient( #00000096, #fefefe8c, #00000096), url(/assets/img/read.jpeg);
   height: 220px;
   box-shadow: 0px 5px 15px 0px #00000059;
   cursor: pointer;
