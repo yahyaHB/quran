@@ -5,6 +5,7 @@ import './style.css'
 export default class OptionPopup extends Component {
 
   render(){
+    console.log('this.props', this.props);
     const style = {
       top :  this.props.position.top,
       left : this.props.position.left  ,

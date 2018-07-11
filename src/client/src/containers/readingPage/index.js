@@ -8,7 +8,7 @@ import Page from '../../components/page';
 import './style.css';
 export default class Home extends Component {
   state = {
-    isFetching : true ,
+    isFetching: true ,
     surah : {
       name : 'test',
       numberOfAyahs :0 ,
