@@ -23,6 +23,7 @@ export default class Words extends Component {
         showPopUp : true ,
         popPosition : fixPosition(position)
       })
+      console.log(this.state.activeAyah);
     }
     else
     this.setState({ showPopUp : !this.state.showPopUp })
@@ -32,7 +33,7 @@ export default class Words extends Component {
     const words =ayahsWords(this.props.ayahs) || []
     return (
       <div className='words-holder-container'>
-        {this.state.showPopUp && <OptionPopup  position={this.state.popPosition} ayah= {''}/>}
+        {this.state.showPopUp && <OptionPopup  position={this.state.popPosition} ayah= {''} tafsir={this.state.activeAyah.tafsier.ibnkther}/>}
         {words.map((word,id) =>
           <Word
           key={id}

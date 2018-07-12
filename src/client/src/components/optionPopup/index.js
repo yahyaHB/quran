@@ -1,8 +1,14 @@
 import React , { Component } from 'react'
-
+import TafsirModal from '../modal'
 import './style.css'
 
 export default class OptionPopup extends Component {
+
+  state = {
+    showTafsirModal : false
+  }
+
+  toggleTafsirModal = () => this.setState({ showTafsirModal: !this.state.showTafsirModal })
 
   render(){
     const style = {
@@ -25,13 +31,14 @@ export default class OptionPopup extends Component {
             مشاركة
             </span>
           </span>
-          <span className='popup-menu-item'>
+          <span onClick={this.toggleTafsirModal} className='popup-menu-item'>
             <i className="fas fa-clipboard-list"></i>
             <span className='popup-menu-item-content'>
             تفسير
             </span>
           </span>
         </div>
+      {this.state.showTafsirModal && <TafsirModal closeModal={this.toggleTafsirModal} tafsir={this.props.tafsir} /> }
     </div>
     )
   }
