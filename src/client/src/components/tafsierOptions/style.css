@@ -1,0 +1,54 @@
+.ayah-options-popup-container{
+  margin-top: 5px;
+  position: absolute;
+  background: #f7f7ff;
+  border: 1px solid #03a678c4;
+  border-radius: 3px;
+  background: white;
+  z-index: 10;
+}
+
+.popup-menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.popup-menu-item{
+
+  padding: 3px 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color : #000000b0;
+  z-index: 10;
+}
+
+.popup-menu-item:hover{
+  background: #03a678c4;
+  color:white;
+}
+.arrow-down{
+  /* position: absolute;
+  height: 15px;
+  width: 15px;
+
+  border-bottom: 15px solid green;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent; */
+}
+.arrow-down{
+  color:#03a678c4;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  background: white;
+  top:-15px;
+  left: 55px;
+  border-top: 1px solid currentColor;
+  border-left: 1px solid currentColor;
+  transform: rotate(45deg);
+  z-index: 5;
+}
+.popup-menu-item-content{
+  margin-right: 5px;
+}
