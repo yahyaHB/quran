@@ -33,7 +33,7 @@ export default class Words extends Component {
     const words =ayahsWords(this.props.ayahs) || []
     return (
       <div className='words-holder-container'>
-        {this.state.showPopUp && <OptionPopup  position={this.state.popPosition} ayah= {''} tafsir={this.state.activeAyah.tafsier.ibnkther}/>}
+        {this.state.showPopUp && <OptionPopup  position={this.state.popPosition} ayah= {''} tafsir={this.state.activeAyah.tafsier}/>}
         {words.map((word,id) =>
           <Word
           key={id}

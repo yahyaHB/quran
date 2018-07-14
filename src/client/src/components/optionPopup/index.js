@@ -1,20 +1,19 @@
 import React , { Component } from 'react'
-import TafsirModal from '../modal'
+import TafsierOptions from '../tafsierOptions'
 import './style.css'
 
 export default class OptionPopup extends Component {
-
   state = {
-    showTafsirModal : false
+    tafsierOptionsVisibility: false
   }
-
-  toggleTafsirModal = () => this.setState({ showTafsirModal: !this.state.showTafsirModal })
+  toggleTafsirOptions = () => this.setState({ tafsierOptionsVisibility: !this.state.tafsierOptionsVisibility })
 
   render(){
     const style = {
-      top :  this.props.position.top,
-      left : this.props.position.left  ,
+      top: this.props.position.top,
+      left: this.props.position.left
     }
+
     return (
     <div style={style} className='ayah-options-popup-container'>
         <div className='arrow-down'></div>
@@ -31,14 +30,14 @@ export default class OptionPopup extends Component {
             مشاركة
             </span>
           </span>
-          <span onClick={this.toggleTafsirModal} className='popup-menu-item'>
+          <span onClick={this.toggleTafsirOptions} className='popup-menu-item'>
             <i className="fas fa-clipboard-list"></i>
             <span className='popup-menu-item-content'>
             تفسير
             </span>
           </span>
         </div>
-      {this.state.showTafsirModal && <TafsirModal closeModal={this.toggleTafsirModal} tafsir={this.props.tafsir} /> }
+      {this.state.tafsierOptionsVisibility && <TafsierOptions closeModal={this.towggleTafsirOptions} tafsir={this.props.tafsir} /> }
     </div>
     )
   }

@@ -11,6 +11,7 @@ export default class TafsirModal extends Component {
         <div className='modal-content'>
           <div className='main-content-holder'>
             <div onClick={this.props.closeModal} className='close-btn'>X</div>
+            <div className='original-ayah-text'>{this.props.ayah}</div>
             <div className='modal-main-content'>
               {this.props.tafsir}
             </div>
