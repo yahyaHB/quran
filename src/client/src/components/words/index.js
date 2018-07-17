@@ -6,7 +6,7 @@ import ReactDOM from "react-dom";
 import './style.css'
 
 const ayahToWords = ayah => ayah.originalText.split(' ').map(word=>({text : word.trim() , ayahId :ayah.numberInSurah }))
-const ayahsWords = ayahs => ayahs.reduce((ayahsWords , ayah) => [...ayahsWords ,...ayahToWords(ayah)], [])
+const ayahsWords = (ayahs=[]) => ayahs.reduce((ayahsWords , ayah) => [...ayahsWords ,...ayahToWords(ayah)], [])
 const fixPosition = position => ({ top : position.top - 70 , left : 220  })
 
 export default class Words extends Component {

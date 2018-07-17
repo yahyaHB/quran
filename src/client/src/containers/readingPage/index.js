@@ -7,6 +7,8 @@ import Page from '../../components/page'
 import './style.css'
 export default class Home extends Component {
   state = {
+     isMobile : true ,
+     theFactory: 2,
     isFetching : true ,
     error:'',
     surah : {
@@ -15,7 +17,8 @@ export default class Home extends Component {
       revelationType : 'makan el nozol'
     },
     currentPage : 5 ,
-    page : {}
+    page_1 : {},
+    page_2 : {}
 
   }
 
@@ -26,7 +29,16 @@ export default class Home extends Component {
     })
     this.goToPage(++this.state.currentPage)
   }
-  componentDidMount = () => this.goToPage(7)
+  componentDidMount = () => {
+
+    // Detcteng the if the device is mobile
+     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+     &&
+     this.setState({ isMobile : true , theFactory: 1 })
+
+ //this is temporarly changing the page to
+     this.goToPage(7)
+  }
   goToPage = (page) => {
       apiRequest('' , page)
       .then(page => this.setState({
@@ -43,25 +55,6 @@ export default class Home extends Component {
         }
      }))
      .catch(({ message }) => this.setState({isFetching:false , message}))
-    // then(this.setState)
-   //   fetch(`https://qurn.herokuapp.com/api/page/${page || 2 }` )
-   //  .then( res => res.json())
-   //  .then(({page}) =>{
-   //    this.setState({
-   //    isFetching : false ,
-   //    surah : {
-   //      name : page.ayahs[0].surah.name,
-   //      numberOfAyahs :page.ayahs[0].surah.numberOfAyahs ,
-   //      revelationType :page.ayahs[0].surah.revelationType
-   //    } ,
-   //    page : {
-   //      ayahs : page.ayahs ,
-   //      firstPage : page.number ,
-   //      currentPage : page.number
-   //    }
-   //   })
-   // })
-   //  .catch(err => console.error(err.message))
   }
 
   render(){
@@ -74,6 +67,7 @@ export default class Home extends Component {
       <NavBar surah={surah} goToSurah={this.goToSurah}/>
       {!isFetching ?
       <div className='reading-page'>
+        <Page page={this.state.page} />
         <Page page={this.state.page} />
       </div>
       :
