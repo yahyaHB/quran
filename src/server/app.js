@@ -4,6 +4,7 @@ const app = express();
 const api = require('./api')
 
 app.use('/static', express.static(path.join(__dirname,'..','client','build','static')));
+app.use('/assets', express.static(path.join(__dirname,'..','client','build','assets')));
 
 app.use(function(req, res, next) {
 	req.now = Date.now();
