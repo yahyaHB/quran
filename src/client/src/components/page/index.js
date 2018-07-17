@@ -8,6 +8,7 @@ import './style.css'
 export default class Page extends Component {
 
 
+
   render(){
     console.log('Page' ,this.props);
     const { ayahs , currentPage , firstPage } = this.props.page
@@ -21,7 +22,10 @@ export default class Page extends Component {
 
           </div>
           <div className='ayat-list-holder'>
-             <Words ayahs={ayahs}/>
+             <Words ayahs={ayahs}
+              isOnTafsirMod={this.props.isOnTafsirMod}
+              displayTafsir={this.props.displayTafsir}
+             />
           </div>
         </div>
       </div>

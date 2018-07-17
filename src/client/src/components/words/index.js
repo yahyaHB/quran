@@ -14,7 +14,7 @@ export default class Words extends Component {
     activeAyah : {},
     showPopUp : false
   }
-  componentDidMount = () => ReactDOM.findDOMNode(this).onscroll = console.log //() => this.setState({ showPopUp : false })
+  componentDidMount = () => ReactDOM.findDOMNode(this).onscroll = console.log
 
   popAyahOptions = ({ayahId , position } ) => {
     if(this.state.activeAyah.numberInSurah !== ayahId){
@@ -23,7 +23,8 @@ export default class Words extends Component {
         showPopUp : true ,
         popPosition : fixPosition(position)
       })
-      console.log(this.state.activeAyah);
+      if(this.props.isOnTafsirMod)
+        this.props.displayTafsir(this.state.activeAyah);
     }
     else
     this.setState({ showPopUp : !this.state.showPopUp })
@@ -33,7 +34,7 @@ export default class Words extends Component {
     const words =ayahsWords(this.props.ayahs) || []
     return (
       <div className='words-holder-container'>
-        {this.state.showPopUp && <OptionPopup  position={this.state.popPosition} ayah= {''} tafsir={this.state.activeAyah.tafsier}/>}
+        {!this.props.isOnTafsirMod && this.state.showPopUp && <OptionPopup  position={this.state.popPosition} ayah= {''} tafsir={this.state.activeAyah.tafsier}/>}
         {words.map((word,id) =>
           <Word
           key={id}
