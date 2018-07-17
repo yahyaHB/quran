@@ -13,8 +13,8 @@ export default class Home extends Component {
 
             </div>
             <div className='home-options-holder'>
-              <div className='home-option'><Link className='remove-anchor-style' to='/read'> Tafsis Page </Link></div>
-              <div className='home-option'><Link className='remove-anchor-style' to='/tafsir'>Reading Page </Link> </div>
+              <div className='home-option'><Link className='remove-anchor-style' to='/read'>Reading Page</Link></div>
+              <div className='home-option'><Link className='remove-anchor-style' to='/tafsir'> Tafsis Page</Link> </div>
             </div>
           </div>
       </div>
