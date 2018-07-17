@@ -4,8 +4,17 @@
   "description": "holy quran with diffirent tafaseer",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src",
+    "watch": "nodemon src",
+    "postinstall": "cd src/client && npm i && npm run build "
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "request": "^2.87.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
 }

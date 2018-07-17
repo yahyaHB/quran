@@ -1,3 +1,3 @@
-require('./server/app').listen(process.env.PORT || 3000, () => {
-  console.log('server runs on 3000');
+require('./server/app').listen(process.env.PORT || 5000, () => {
+  console.log('server runs on 5000');
 });

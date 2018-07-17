@@ -1,10 +1,10 @@
 const fs =require('fs')
-const {getSoura, transfare} = require('../models/selfGenratedFunctions/scraper')
-const {writeJsonfiles} = require('../models/selfGenratedFunctions/transferer')
+// const {getSoura, transfare} = require('../models/selfGenratedFunctions/scraper')
+// const {writeJsonfiles} = require('../models/selfGenratedFunctions/transferer')
 const router = require('express').Router()
 const modlesPath = __dirname+'/../models/json/'
 const {ayahsPerSura} = require('./ayahs')
-const { PageDetails } = require('./pages')
+// const { PageDetails } = require('./pages')
 
 
 router.get('/' ,(req,res,next)=>{
