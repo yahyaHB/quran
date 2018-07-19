@@ -1,6 +1,6 @@
 import React , { Component } from 'react'
 import { apiRequest } from '../../actions'
-import * as readingPageActions from '../../actions/page-actions'
+import { initializeTheApp } from '../../actions/page-actions'
 import { connect } from 'react-redux'
 
 import NavBar from '../../components/navBar'
@@ -34,7 +34,8 @@ class Home extends Component {
     this.goToPage(++this.state.currentPage)
   }
   componentDidMount = () => {
-    this.props.initializeTheApp()
+
+    console.log(this.props.initializeTheApp());
     // Detcteng the if the device is mobile
     (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
      &&
@@ -86,4 +87,8 @@ class Home extends Component {
 const mapStateToProps = state => ({
   state
 })
-export default connect(mapStateToProps,readingPageActions)(Home)
+
+const mapActionsToProps = {
+  initializeTheApp
+}
+export default connect(mapStateToProps,mapActionsToProps)(Home)
