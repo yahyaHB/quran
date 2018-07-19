@@ -1,19 +1,28 @@
 import React , { Component } from 'react'
+import { apiRequest } from '../../actions'
+import { initializeTheApp } from '../../actions/page-actions'
+import { connect } from 'react-redux'
 
 import NavBar from '../../components/navBar'
 import Page from '../../components/page'
 
 import './style.css'
-export default class Home extends Component {
+
+
+class Home extends Component {
   state = {
+     isMobile : true ,
+     theFactory: 2,
     isFetching : true ,
+    error:'',
     surah : {
       name : 'test',
       numberOfAyahs :0 ,
       revelationType : 'makan el nozol'
     },
     currentPage : 5 ,
-    page : {}
+    page_1 : {},
+    page_2 : {}
 
   }
 
@@ -24,40 +33,47 @@ export default class Home extends Component {
     })
     this.goToPage(++this.state.currentPage)
   }
-  componentDidMount = () => this.goToPage(7)
-  goToPage = (page) => {
+  componentDidMount = () => {
 
-     fetch(`https://qurn.herokuapp.com/api/page/${page || 2 }` )
-    .then( res => res.json())
-    .then(({page}) =>{
-      this.setState({
-      isFetching : false ,
-      surah : {
-        name : page.ayahs[0].surah.name,
-        numberOfAyahs :page.ayahs[0].surah.numberOfAyahs ,
-        revelationType :page.ayahs[0].surah.revelationType
-      } ,
-      page : {
-        ayahs : page.ayahs ,
-        firstPage : page.number ,
-        currentPage : page.number
-      }
-     })
-     console.log('-------------------------' ,this.state);
-   })
-    .catch(err => console.error(err.message))
+    console.log(this.props.initializeTheApp());
+    // Detcteng the if the device is mobile
+    (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+     &&
+     this.setState({ isMobile : true , theFactory: 1 })
+
+    //this is temporarly changing the page to
+     this.goToPage(7)
+  }
+  goToPage = (page) => {
+     //  apiRequest('' , page)
+     //  .then(page => this.setState({
+     //    isFetching : false ,
+     //    surah : {
+     //      name : page.ayahs[0].surah.name,
+     //      numberOfAyahs :page.ayahs[0].surah.numberOfAyahs ,
+     //      revelationType :page.ayahs[0].surah.revelationType
+     //    } ,
+     //    page : {
+     //      ayahs : page.ayahs ,
+     //      firstPage : page.number ,
+     //      currentPage : page.number
+     //    }
+     // }))
+     // .catch(({ message }) => this.setState({isFetching:false , message}))
   }
 
   render(){
+    console.log(this.props.state);
     const { name , numberOfAyahs , revelationType  }  = this.state.surah
     const surah = { name , numberOfAyahs , revelationType }
     const isFetching = this.state.isFetching
 
     return (
       <div>
+      <NavBar surah={surah} goToSurah={this.goToSurah}/>
       {!isFetching ?
       <div className='reading-page'>
-        <NavBar surah={surah} goToSurah={this.goToSurah}/>
+        <Page page={this.state.page} />
         <Page page={this.state.page} />
       </div>
       :
@@ -67,3 +83,12 @@ export default class Home extends Component {
     )
   }
 }
+
+const mapStateToProps = state => ({
+  state
+})
+
+const mapActionsToProps = {
+  initializeTheApp
+}
+export default connect(mapStateToProps,mapActionsToProps)(Home)
